@@ -33,6 +33,7 @@ This script will:
 - Will copy the semantic file that will be used by Cortex Analyst
 - Will install Wealth 360 App
 
+[!APP](/img/DB.png)
 
 ## Questions to ask, in the chat part
 
