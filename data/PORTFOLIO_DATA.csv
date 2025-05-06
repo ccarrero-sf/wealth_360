@@ -1,0 +1,133 @@
+CID;TYPE;ASSET_CLASS;INSTRUMENT;DENOMINATION;AMOUNT;YTD_RETURN;1Y_Return;3Y_Return;5Y_Return
+9572;Asset;Cash and Cash Equivalents;Current Account;GBP;43708.61;0.33;0.33;0.61;2.28
+9572;Asset;Cash and Cash Equivalents;Savings Account;GBP;24039.51;0.02;0.92;1.91;2.15
+9572;Asset;Investments;Shares;GBP;29631.51;2.76;15.73;22.91;48.19
+9572;Asset;Investments;Corporate Bonds;GBP;66266.01;13.83;5.44;48.06;73.37
+9572;Asset;Investments;International Equities;GBP;162666.90;-1.08;-7.23;5.04;11.28
+9572;Asset;Investments;Equity Funds;GBP;201664.59;-3.11;17.32;3.56;32.33
+9572;Asset;Investments;Bond Funds;GBP;69926.60;11.90;-9.07;40.72;29.73
+9572;Asset;Retirement Savings;Pension Fund;GBP;140702.75;0.83;5.88;11.29;36.32
+9572;Asset;Real Estate;Primary Residence;GBP;158293.28;6.56;11.07;8.46;20.65
+9572;Asset;Real Estate;Rental Property;GBP;35451.34;6.76;11.14;29.72;34.76
+2529;Asset;Cash and Cash Equivalents;Current Account;GBP;15854.64;0.19;1.19;1.01;2.86
+2529;Asset;Cash and Cash Equivalents;Savings Account;GBP;18790.49;0.43;0.70;1.63;2.51
+2529;Asset;Investments;Shares;GBP;32737.42;-2.94;26.10;25.26;67.85
+2529;Asset;Investments;Corporate Bonds;GBP;142015.30;1.40;25.82;19.46;10.76
+2529;Asset;Investments;International Equities;GBP;236387.26;13.11;-6.35;15.97;76.50
+2529;Asset;Investments;Equity Funds;GBP;69096.14;14.01;12.94;31.59;41.39
+2529;Asset;Investments;Bond Funds;GBP;35176.14;0.86;3.15;33.63;62.67
+2529;Asset;Retirement Savings;Pension Fund;GBP;98199.32;5.54;6.53;5.91;24.83
+2529;Asset;Real Estate;Primary Residence;GBP;112452.39;-2.25;5.99;13.25;63.26
+2529;Asset;Real Estate;Rental Property;GBP;86053.53;1.56;-2.66;4.29;55.69
+6641;Asset;Cash and Cash Equivalents;Current Account;GBP;35284.11;0.31;0.24;0.63;2.40
+6641;Asset;Cash and Cash Equivalents;Savings Account;GBP;98819.82;0.05;1.25;1.56;1.16
+6641;Asset;Investments;Shares;GBP;184042.90;-3.30;29.47;18.71;35.94
+6641;Asset;Investments;Corporate Bonds;GBP;51070.54;11.26;27.89;49.30;62.74
+6641;Asset;Investments;International Equities;GBP;94971.02;2.53;-6.66;38.86;49.09
+6641;Asset;Investments;Equity Funds;GBP;131248.36;3.48;26.25;5.56;44.48
+6641;Asset;Investments;Bond Funds;GBP;51908.71;-4.77;8.75;2.82;18.32
+6641;Asset;Retirement Savings;Pension Fund;GBP;185480.08;0.82;5.54;12.46;27.50
+6641;Asset;Real Estate;Primary Residence;GBP;196176.64;9.51;2.50;8.57;62.12
+6641;Asset;Real Estate;Rental Property;GBP;151287.37;-0.09;14.26;0.36;68.19
+8201;Asset;Cash and Cash Equivalents;Current Account;GBP;57045.95;0.03;1.35;1.29;2.99
+8201;Asset;Cash and Cash Equivalents;Savings Account;GBP;67276.94;0.05;0.88;1.95;2.05
+8201;Asset;Investments;Shares;GBP;117336.16;7.59;17.83;22.73;53.93
+8201;Asset;Investments;Corporate Bonds;GBP;61274.79;6.69;26.05;2.27;29.67
+8201;Asset;Investments;International Equities;GBP;205826.22;14.01;25.61;22.78;53.41
+8201;Asset;Investments;Equity Funds;GBP;226620.54;0.55;-2.48;23.18;34.73
+8201;Asset;Investments;Bond Funds;GBP;96550.78;6.67;-6.89;48.72;79.03
+8201;Asset;Retirement Savings;Pension Fund;GBP;49761.68;4.89;4.75;8.10;34.41
+8201;Asset;Real Estate;Primary Residence;GBP;76285.41;5.90;-1.75;27.33;59.35
+8201;Asset;Real Estate;Rental Property;GBP;121099.25;9.35;9.51;18.40;35.09
+9802;Asset;Cash and Cash Equivalents;Current Account;GBP;10625.69;0.47;1.31;0.57;1.05
+9802;Asset;Cash and Cash Equivalents;Savings Account;GBP;40385.37;0.19;1.23;1.98;1.30
+9802;Asset;Investments;Shares;GBP;106816.66;6.88;5.24;48.50;68.95
+9802;Asset;Investments;Corporate Bonds;GBP;92697.62;11.77;8.75;20.74;29.14
+9802;Asset;Investments;International Equities;GBP;36582.72;-3.87;24.59;40.65;79.98
+9802;Asset;Investments;Equity Funds;GBP;135126.87;14.93;12.22;38.45;76.13
+9802;Asset;Investments;Bond Funds;GBP;246771.35;11.99;-0.11;22.53;19.04
+9802;Asset;Retirement Savings;Pension Fund;GBP;79462.44;6.68;5.24;7.29;30.15
+9802;Asset;Real Estate;Primary Residence;GBP;176230.50;5.04;2.16;3.41;50.29
+9802;Asset;Real Estate;Rental Property;GBP;196364.41;3.76;10.45;15.60;61.13
+5461;Asset;Cash and Cash Equivalents;Current Account;GBP;43100.48;0.28;0.89;1.81;1.81
+5461;Asset;Cash and Cash Equivalents;Savings Account;GBP;85177.22;0.08;0.14;1.63;2.24
+5461;Asset;Investments;Shares;GBP;177451.98;9.08;-1.48;6.82;11.02
+5461;Asset;Investments;Corporate Bonds;GBP;64232.45;2.01;13.60;19.61;40.62
+5461;Asset;Investments;International Equities;GBP;101739.93;13.08;3.93;25.70;64.86
+5461;Asset;Investments;Equity Funds;GBP;173496.41;2.93;14.88;43.12;76.47
+5461;Asset;Investments;Bond Funds;GBP;208875.00;-2.06;27.06;24.61;28.08
+5461;Asset;Retirement Savings;Pension Fund;GBP;149920.18;3.21;7.86;9.93;19.86
+5461;Asset;Real Estate;Primary Residence;GBP;144171.38;5.23;-0.20;2.28;17.73
+5461;Asset;Real Estate;Rental Property;GBP;79416.77;-1.34;-1.96;4.16;48.45
+9044;Asset;Cash and Cash Equivalents;Current Account;GBP;91037.63;0.10;0.58;1.85;1.95
+9044;Asset;Cash and Cash Equivalents;Savings Account;GBP;90739.92;0.34;0.34;0.79;1.08
+9044;Asset;Investments;Shares;GBP;61366.46;-1.62;1.14;8.85;16.21
+9044;Asset;Investments;Corporate Bonds;GBP;174287.90;-2.59;8.43;10.32;35.50
+9044;Asset;Investments;International Equities;GBP;171691.28;5.07;17.62;1.97;65.96
+9044;Asset;Investments;Equity Funds;GBP;192960.57;7.56;-6.73;43.68;74.46
+9044;Asset;Investments;Bond Funds;GBP;171167.40;-3.78;1.08;40.31;62.38
+9044;Asset;Retirement Savings;Pension Fund;GBP;216075.27;1.29;2.47;8.70;24.54
+9044;Asset;Real Estate;Primary Residence;GBP;172962.90;5.04;2.38;13.88;54.85
+9044;Asset;Real Estate;Rental Property;GBP;152869.44;-2.52;0.05;21.40;63.71
+3070;Asset;Cash and Cash Equivalents;Current Account;GBP;33868.21;0.26;0.84;0.66;1.89
+3070;Asset;Cash and Cash Equivalents;Savings Account;GBP;66802.48;0.27;0.44;0.90;1.75
+3070;Asset;Investments;Shares;GBP;68929.67;-4.60;2.88;10.57;32.92
+3070;Asset;Investments;Corporate Bonds;GBP;64849.90;-2.60;25.62;29.68;57.54
+3070;Asset;Investments;International Equities;GBP;28477.74;10.78;9.94;4.35;47.60
+3070;Asset;Investments;Equity Funds;GBP;216927.13;6.74;19.82;21.58;18.93
+3070;Asset;Investments;Bond Funds;GBP;91251.00;0.68;4.52;32.30;49.95
+3070;Asset;Retirement Savings;Pension Fund;GBP;111646.99;2.49;7.91;11.06;17.12
+3070;Asset;Real Estate;Primary Residence;GBP;216505.75;-1.68;-1.94;7.38;19.64
+3070;Asset;Real Estate;Rental Property;GBP;96307.45;-0.57;0.70;5.20;63.81
+5807;Asset;Cash and Cash Equivalents;Current Account;GBP;94253.93;0.05;0.83;1.12;2.96
+5807;Asset;Cash and Cash Equivalents;Savings Account;GBP;99104.85;0.06;0.66;1.95;2.73
+5807;Asset;Investments;Shares;GBP;181828.54;11.34;0.32;8.54;56.81
+5807;Asset;Investments;Corporate Bonds;GBP;207275.51;13.59;12.27;28.58;29.60
+5807;Asset;Investments;International Equities;GBP;204616.42;10.39;-2.52;16.18;39.78
+5807;Asset;Investments;Equity Funds;GBP;101048.91;5.15;-0.30;5.74;52.74
+5807;Asset;Investments;Bond Funds;GBP;109506.16;0.77;13.25;7.72;43.68
+5807;Asset;Retirement Savings;Pension Fund;GBP;46145.94;3.73;1.36;8.37;14.03
+5807;Asset;Real Estate;Primary Residence;GBP;155113.03;-2.18;14.80;9.67;58.59
+5807;Asset;Real Estate;Rental Property;GBP;33087.01;0.31;8.63;22.81;45.74
+2234;Asset;Cash and Cash Equivalents;Current Account;GBP;35788.71;0.24;0.68;1.02;2.86
+2234;Asset;Cash and Cash Equivalents;Savings Account;GBP;42417.16;0.42;1.45;0.69;2.46
+2234;Asset;Investments;Shares;GBP;165150.36;13.77;-2.75;3.32;61.88
+2234;Asset;Investments;Corporate Bonds;GBP;168421.73;6.49;23.67;6.99;65.67
+2234;Asset;Investments;International Equities;GBP;203916.89;-0.97;-3.45;8.21;67.02
+2234;Asset;Investments;Equity Funds;GBP;241595.89;8.30;10.92;17.94;71.40
+2234;Asset;Investments;Bond Funds;GBP;213095.53;2.85;22.66;21.96;36.39
+2234;Asset;Retirement Savings;Pension Fund;GBP;181594.20;3.24;3.11;12.48;25.08
+2234;Asset;Real Estate;Primary Residence;GBP;117014.41;0.02;12.99;11.52;42.61
+2234;Asset;Real Estate;Rental Property;GBP;63991.22;8.78;7.48;3.51;66.39
+3864;Asset;Cash and Cash Equivalents;Current Account;GBP;59430.40;0.32;0.57;0.71;2.59
+3864;Asset;Cash and Cash Equivalents;Savings Account;GBP;76410.72;0.31;0.85;1.84;2.58
+3864;Asset;Investments;Shares;GBP;105093.85;-1.97;2.47;12.42;62.08
+3864;Asset;Investments;Corporate Bonds;GBP;34163.98;-4.33;12.80;38.12;71.37
+3864;Asset;Investments;International Equities;GBP;135613.57;1.84;22.85;5.53;69.25
+3864;Asset;Investments;Equity Funds;GBP;163566.27;-2.45;5.89;39.86;20.49
+3864;Asset;Investments;Bond Funds;GBP;167896.07;-0.41;18.89;36.00;54.88
+3864;Asset;Retirement Savings;Pension Fund;GBP;35193.40;4.86;4.80;7.52;20.37
+3864;Asset;Real Estate;Primary Residence;GBP;109287.84;-0.64;13.17;17.50;34.05
+3864;Asset;Real Estate;Rental Property;GBP;165818.48;3.01;13.95;4.60;45.17
+9572;Liability;Mortgage;Primary Residence Mortgage;GBP;-161697.59;;;;
+9572;Liability;Mortgage;Rental Residence Mortgage;GBP;-63367.93;;;;
+2529;Liability;Mortgage;Primary Residence Mortgage;GBP;-211465.94;;;;
+2529;Liability;Mortgage;Rental Residence Mortgage;GBP;-105269.50;;;;
+6641;Liability;Mortgage;Primary Residence Mortgage;GBP;-198467.62;;;;
+6641;Liability;Mortgage;Rental Residence Mortgage;GBP;-136104.01;;;;
+8201;Liability;Mortgage;Primary Residence Mortgage;GBP;-209053.32;;;;
+8201;Liability;Mortgage;Rental Residence Mortgage;GBP;-218664.38;;;;
+9802;Liability;Mortgage;Primary Residence Mortgage;GBP;-78468.45;;;;
+9802;Liability;Mortgage;Rental Residence Mortgage;GBP;-188848.68;;;;
+5461;Liability;Mortgage;Primary Residence Mortgage;GBP;-45948.12;;;;
+5461;Liability;Mortgage;Rental Residence Mortgage;GBP;-226873.55;;;;
+9044;Liability;Mortgage;Primary Residence Mortgage;GBP;-46076.82;;;;
+9044;Liability;Mortgage;Rental Residence Mortgage;GBP;-107736.06;;;;
+3070;Liability;Mortgage;Primary Residence Mortgage;GBP;-63135.87;;;;
+3070;Liability;Mortgage;Rental Residence Mortgage;GBP;-150280.28;;;;
+5807;Liability;Mortgage;Primary Residence Mortgage;GBP;-129759.55;;;;
+5807;Liability;Mortgage;Rental Residence Mortgage;GBP;-147095.04;;;;
+2234;Liability;Mortgage;Primary Residence Mortgage;GBP;-60198.33;;;;
+2234;Liability;Mortgage;Rental Residence Mortgage;GBP;-81304.65;;;;
+3864;Liability;Mortgage;Primary Residence Mortgage;GBP;-138205.66;;;;
+3864;Liability;Mortgage;Rental Residence Mortgage;GBP;-217710.21;;;;

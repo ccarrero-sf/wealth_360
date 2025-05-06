@@ -1,0 +1,485 @@
+name: wealth_semantic_layer
+description: This semantic model can be used for asking questions about customers and their portfolio data. The model can answer questions about customer demographic and financial
+      information, customer portfolio data including performance metrics and instruments and interactions with customers.
+tables:
+  - name: CUSTOMERS
+    description: The table contains records of customer demographic and financial
+      information. Each record represents an individual customer and includes details
+      about their personal information, customer type, occupation, income, expenses,
+      debts, and investment interests.
+    base_table:
+      database: FSI_DEMOS
+      schema: WEALTH
+      table: CUSTOMERS
+    primary_key:
+      columns:
+        - CID
+    dimensions:
+      - name: CID
+        synonyms:
+          - ID
+        description: Customer Identification Number
+        expr: CID
+        data_type: NUMBER
+        unique: true
+        sample_values:
+          - '9572'
+          - '2529'
+          - '6641'
+      - name: FIRST_NAME
+        synonyms:
+          - name
+          - forename
+          - customer name
+        description: First Name of Customers
+        expr: FIRST_NAME
+        data_type: TEXT
+        sample_values:
+          - Sally
+          - Karen
+          - Abigail
+      - name: LAST_NAME
+        synonyms:
+          - surename
+        description: Last Name of Customers
+        expr: LAST_NAME
+        data_type: TEXT
+        sample_values:
+          - Johnson
+          - Matthews
+          - Fowler
+      - name: CUST_TYPE
+        description: Customer Type
+        expr: CUST_TYPE
+        data_type: TEXT
+        sample_values:
+          - Premier
+          - Personal
+      - name: OCCUPATION
+        synonyms:
+          - work
+          - line of work
+        description: Occupation of the customer.
+        expr: OCCUPATION
+        data_type: TEXT
+        sample_values:
+          - Corporate Executive
+          - Software Engineer
+          - Doctor
+      - name: DOMICILE
+        synonyms:
+          - country of residence
+        description: Customer's country of domicile.
+        expr: DOMICILE
+        data_type: TEXT
+        sample_values:
+          - UK
+          - CA
+          - AU
+      - name: MARITAL_STATUS
+        synonyms:
+          - civil status
+          - relationship status
+          - family situation
+        description: Marital Status of the Customer
+        expr: MARITAL_STATUS
+        data_type: TEXT
+        sample_values:
+          - Married
+          - Widowed
+          - Divorced
+      - name: SHORT_TERM_GOALS
+        synonyms:
+          - Short-term financial goals
+        description: Short-term financial goals of customers.
+        expr: SHORT_TERM_GOALS
+        data_type: TEXT
+        sample_values:
+          - Maximize investment returns over the next 10 years
+          - Maximize tech stock options and retirement savings
+          - Increase savings in medical practice and investments
+      - name: LONG_TERM_GOALS
+        synonyms:
+          - Long-term financial goal
+        description: Long-term financial goals and aspirations of customers.
+        expr: LONG_TERM_GOALS
+        data_type: TEXT
+        sample_values:
+          - Ensure financial security for retirement
+          - Build a diverse portfolio for a stable retirement
+          - Ensure financial stability and cover healthcare costs in retirement
+      - name: ANNUAL_INCOME
+        synonyms:
+          - yearly income level
+        description: Annual Income Level
+        expr: ANNUAL_INCOME
+        data_type: TEXT
+        sample_values:
+          - High
+          - Very high
+          - Moderate
+      - name: MONTHLY_EXPENSES
+        synonyms:
+          - Monthly Cost
+        description: Monthly Expenses
+        expr: MONTHLY_EXPENSES
+        data_type: TEXT
+        sample_values:
+          - Significant
+          - Moderate, including tech gadgets and investments
+          - High, due to medical expenses and professional updates
+      - name: EXISTING_DEBTS
+        synonyms:
+          - debts
+        description: Amount of debt that existing customers have, categorized as manageable,
+          low, or moderate.
+        expr: EXISTING_DEBTS
+        data_type: TEXT
+        sample_values:
+          - Manageable debt from real estate investment
+          - Low, thanks to company benefits
+          - Moderate, mainly from medical school loans
+      - name: INTEREST_RATES
+        description: Interest rates offered to customers based on their industry and
+          professional stability.
+        expr: INTEREST_RATES
+        data_type: TEXT
+        sample_values:
+          - Competitive
+          - Competitive tech industry rates
+          - Favorable due to professional stability
+      - name: REPAYMENT_TERMS
+        synonyms:
+          - payment terms
+        description: Repayment terms for customers, including options for repayment
+          plans and other arrangements.
+        expr: REPAYMENT_TERMS
+        data_type: TEXT
+        sample_values:
+          - 15-year plan
+          - Company stock options plan
+          - None
+      - name: MONTHLY_SAVINGS_INVESTMENTS
+        description: Monthly Savings and Investments Strategy
+        expr: MONTHLY_SAVINGS_INVESTMENTS
+        data_type: TEXT
+        sample_values:
+          - 20% of income
+          - 15% of income
+          - 10% of income in conservative investments
+      - name: RISK_TOLERANCE
+        description: The level of risk that a customer is willing to take with their investments, categorized as Moderate, Low, or Moderate to High.
+        expr: RISK_TOLERANCE
+        data_type: TEXT
+        sample_values:
+          - Moderate, preferring balanced portfolio
+          - Low, prefers tech stocks and mutual funds
+          - Moderate to high, accustomed to medical industry volatility
+      - name: PAST_INVESTMENT_EXPERIENCE
+        description: The level of investment experience of each customer, categorized
+          as Positive, Moderate, or None.
+        expr: PAST_INVESTMENT_EXPERIENCE
+        data_type: TEXT
+        sample_values:
+          - Positive, with learning experiences from downturns
+          - Moderate, experienced with stock options
+          - None
+      - name: INVESTMENT_INTERESTS
+        description: A text field capturing the various investment types that interest
+          each customer, including real estate, stocks, cryptocurrencies, and alternative
+          investments.
+        expr: INVESTMENT_INTERESTS
+        data_type: TEXT
+        sample_values:
+          - Real estate, diverse assets, alternative investments
+          - Tech stocks, cryptocurrencies
+          - Healthcare and pharmaceutical stocks
+      - name: ETHICAL_INVESTING_INTEREST
+        description: The level of interest in ethical investing and the specific areas
+          of focus for each customer, including their preferences for ESG-compliant
+          companies, corporate social responsibility (CSR) policies, and biotech and
+          healthcare advancements.
+        expr: ETHICAL_INVESTING_INTEREST
+        data_type: TEXT
+        sample_values:
+          - Very interested, prefers ESG-compliant companies
+          - Interested in tech companies with strong CSR policies
+          - Highly interested in biotech and healthcare advancements
+      - name: RETIREMENT_LIFESTYLE
+        description: The lifestyle preferences of customers, including their comfort
+          level with travel, leisure activities, and hobbies, as well as their focus
+          on health and wellness.
+        expr: RETIREMENT_LIFESTYLE
+        data_type: TEXT
+        sample_values:
+          - Comfortable with regular travel and leisure activities
+          - Active, with tech-related hobbies and travel
+          - Comfortable, with a focus on health and wellness
+      - name: INSURANCE_TYPES
+        description: List of insurance types offered to customers.
+        expr: INSURANCE_TYPES
+        data_type: TEXT
+        sample_values:
+          - Life, health, disability
+          - Health, disability
+          - Life, health, malpractice
+      - name: WILL_TRUST
+        description: Estate planning considerations for digital assets, including
+          awareness of their importance.
+        expr: WILL_TRUST
+        data_type: TEXT
+        sample_values:
+          - Both established
+          - Estate plan considering digital assets
+          - Yes, aware of the necessity
+      - name: LEGACY_GOALS
+        description: Legacy goals of charitable contributions, support for alma mater,
+          support for tech education and innovation, and hopes to leave a legacy in
+          medical research and scholarships.
+        expr: LEGACY_GOALS
+        data_type: TEXT
+        sample_values:
+          - Charitable contributions, support for alma mater
+          - Support for tech education and innovation
+          - Hopes to leave a legacy in medical research and scholarships
+      - name: TAX_ADVISOR_ENGAGEMENT
+        description: Information about the tax advisory services used by customers,
+          including whether they work with a tax advisor, rely on specialized tax
+          services, and specialize in medical professionals.
+        expr: TAX_ADVISOR_ENGAGEMENT
+        data_type: TEXT
+        sample_values:
+          - Yes, works with a tax advisor
+          - Relies on specialized tax services
+          - Yes, specializes in medical professionals
+      - name: DEPENDENTS
+        synonyms:
+          - number of children
+        description: Number of dependents for each customer.
+        expr: DEPENDENTS
+        data_type: TEXT
+        sample_values:
+          - Two children
+          - No children
+          - Two children, both aspiring to medical careers
+    time_dimensions:
+      - name: DOB
+        synonyms:
+          - birth date
+          - birthdate
+          - birthday
+          - dob
+          - name day
+        description: Date of Birth
+        expr: DOB
+        data_type: DATE
+        sample_values:
+          - '1979-12-11'
+          - '1956-04-09'
+          - '2002-01-25'
+      - name: CUSTOMER_DATE
+        synonyms:
+          - Aqusition date
+          - Date joined
+          - join date
+        description: The date when a customer became a customer
+        expr: CUSTOMER_DATE
+        data_type: DATE
+    measures:
+      - name: PLANNED_RETIREMENT_AGE
+        description: Planned retirement age of the customer.
+        expr: PLANNED_RETIREMENT_AGE
+        data_type: NUMBER
+        sample_values:
+          - '60'
+          - '65'
+          - '67'
+  - name: PORTFOLIO_DATA
+    description: Portfolio data for individual customers including what type of account customers use for it and investment performance metrics.
+    base_table:
+      database: FSI_DEMOS
+      schema: WEALTH
+      table: PORTFOLIO_DATA
+    primary_key:
+      columns:
+        - CID
+    dimensions:
+      - name: CID
+        synonyms:
+          - ID
+        description: Customer Identification Number
+        expr: CID
+        data_type: NUMBER
+        unique: true
+        sample_values:
+          - '9572'
+          - '2529'
+          - '6641'
+      - name: ACCOUNT_TYPE
+        description: Account Type
+        expr: ACCOUNT_TYPE
+        data_type: TEXT
+        sample_values:
+          - Premier
+          - Personal
+      - name: TYPE
+        description: Type of asset or liability.
+        expr: TYPE
+        data_type: TEXT
+        sample_values:
+          - Asset
+          - Liability
+      - name: ASSET_CLASS
+        description: Asset Class
+        expr: ASSET_CLASS
+        data_type: TEXT
+        sample_values:
+          - Cash and Cash Equivalents
+          - Investments
+          - Retirement Savings
+      - name: INSTRUMENT
+        description: Type of financial instrument held in the portfolio.
+        expr: INSTRUMENT
+        data_type: TEXT
+        sample_values:
+          - Current Account
+          - Savings Account
+          - Shares
+      - name: DENOMINATION
+        description: Currency Denomination
+        expr: DENOMINATION
+        data_type: TEXT
+        sample_values:
+          - GBP
+    measures:
+      - name: AMOUNT
+        description: Historical transaction amounts for a portfolio.
+        expr: AMOUNT
+        data_type: NUMBER
+        sample_values:
+          - '43708.61'
+          - '24039.51'
+          - '29631.51'
+      - name: YTD_RETURN
+        description: Year-to-Date Return
+        expr: YTD_RETURN
+        data_type: NUMBER
+        sample_values:
+          - '0.33'
+          - '0.02'
+          - '2.76'
+      - name: 1Y_Return
+        description: One-Year Return
+        expr: 1Y_Return
+        data_type: NUMBER
+        sample_values:
+          - '0.33'
+          - '0.92'
+          - '15.73'
+      - name: 3Y_Return
+        description: Historical 3-Year Return of the Portfolio
+        expr: 3Y_Return
+        data_type: NUMBER
+        sample_values:
+          - '0.61'
+          - '1.91'
+          - '22.91'
+      - name: 5Y_Return
+        description: Historical 5-year return on investment for a portfolio.
+        expr: 5Y_Return
+        data_type: NUMBER
+        sample_values:
+          - '2.28'
+          - '2.15'
+          - '48.19'
+  - name: RELATIONSHIP_HISTORY
+    description: This table stores historical records of customer relationships, including
+      interaction dates, types, and outcomes, as well as customer satisfaction and churn
+      risk scores.
+    base_table:
+      database: FSI_DEMOS
+      schema: WEALTH
+      table: RELATIONSHIP_HISTORY
+    dimensions:
+      - name: CID
+        synonyms:
+          - '  '
+        description: Customer Identification Number
+        expr: CID
+        data_type: NUMBER
+        sample_values:
+          - '9572'
+          - '2529'
+          - '6641'
+      - name: INTERACTION_TYPE
+        description: Type of interaction, such as Financial Review.
+        expr: INTERACTION_TYPE
+        data_type: TEXT
+        sample_values:
+          - Financial Review
+      - name: RECOMMENDED_PRODUCTS
+        description: Recommended products offered during the interaction.
+        expr: RECOMMENDED_PRODUCTS
+        data_type: TEXT
+        sample_values:
+          - Wealth management services, executive investment accounts, corporate loan
+            products
+          - Tech investment funds, high-yield savings accounts, stock option financing
+          - Healthcare professional mortgage deals, private medical insurance, healthcare
+            tech investments
+    time_dimensions:
+      - name: INTERACTION_DATE
+        description: Date of the interaction.
+        expr: INTERACTION_DATE
+        data_type: DATE
+        sample_values:
+          - '2024-11-12'
+    measures:
+      - name: CUSTOMER_SATISFACTION_SCORE
+        synonyms:
+          - '  '
+        description: Customer Satisfaction Score at the point of the interaction, a numerical value representing the
+          level of satisfaction a customer has with a product or service.
+        expr: CUSTOMER_SATISFACTION_SCORE
+        data_type: NUMBER
+        sample_values:
+          - '6'
+          - '1'
+          - '4'
+      - name: YEARS_AS_CUSTOMER
+        description: Number of years the customer has been a customer of at the time of the interaction.
+        expr: YEARS_AS_CUSTOMER
+        data_type: NUMBER
+        sample_values:
+          - '10'
+          - '20'
+          - '15'
+      - name: CHURN_RISK_SCORE
+        description: A numerical value indicating the likelihood of a customer terminating their relationship with the organization
+        expr: CHURN_RISK_SCORE
+        data_type: NUMBER
+        sample_values:
+          - '4'
+          - '5'
+          - '8'
+    primary_key:
+      columns:
+        - CID
+        - INTERACTION_DATE
+relationships:
+  - name: protfolio_to_customers
+    left_table: CUSTOMERS
+    right_table: CUSTOMERS
+    join_type: inner
+    relationship_type: one_to_one
+    relationship_columns:
+      - left_column: CID
+        right_column: CID
+  - name: relationship_to_customers
+    left_table: CUSTOMERS
+    right_table: RELATIONSHIP_HISTORY
+    join_type: inner
+    relationship_type: many_to_one
+    relationship_columns:
+      - left_column: CID
+        right_column: CID
