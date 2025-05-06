@@ -22,5 +22,22 @@ CREATE OR REPLACE GIT REPOSITORY git_repo
 -- Make sure we get the latest files
 ALTER GIT REPOSITORY git_repo FETCH;
 
+EXECUTE IMMEDIATE FROM @FSI_DEMOS.WEALTH.git_repo/branches/main/setup.sql;
+
 ```
 
+This script will:
+- Use this Git repository to get all data you need
+- Will create Snowflake tables
+- Will load the tables
+- Will copy the semantic file that will be used by Cortex Analyst
+- Will install Wealth 360 App
+
+
+## Questions to ask, in the chat part
+
+Open the Streamlit App (Wealth 360 App) and try these questiosn for Sally Johnson:
+
+- What did we talk about for each of the meetings, give a summarisation for each meeting date
+- What was the major concerns Sally had during the 2023-11-13 meeting
+- What could be a good followup? (is depended on the question above)

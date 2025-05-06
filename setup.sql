@@ -127,22 +127,11 @@ COPY FILES
     FILES = ('wealth_semantic_layer.yaml');
 
 --- Install Streamlit App:
-
-CREATE OR REPLACE STAGE STREAMLIT_APP
-      DIRECTORY = (ENABLE = TRUE)
-      ENCRYPTION = ( TYPE = 'SNOWFLAKE_FULL' );
-
-
-COPY FILES
-    INTO @STREAMLIT_APP/
-    FROM @FSI_DEMOS.WEALTH.git_repo/branches/main/app;
-
-
-alter stage STREAMLIT_APP refresh;
     
 CREATE OR REPLACE STREAMLIT WEALTH_360_APP
-        ROOT_LOCATION = '@FSI_DEMOS.WEALTH.STREAMLIT_APP'
-        MAIN_FILE = '/streamlit_app.py'
+        FROM @FSI_DEMOS.WEALTH.git_repo/branches/main/app
+        MAIN_FILE = 'streamlit_app.py'
         QUERY_WAREHOUSE = 'COMPUTE_WH'
         TITLE = 'Wealth 360 App'
         COMMENT = 'Demo for Wealth 360';
+
