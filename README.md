@@ -42,3 +42,43 @@ Open the Streamlit App (Wealth 360 App) and try these questiosn for Sally Johnso
 - What did we talk about for each of the meetings, give a summarisation for each meeting date
 - What was the major concerns Sally had during the 2023-11-13 meeting
 - What could be a good followup? (is depended on the question above)
+
+## Instal a Local App to use Cortex Agents API
+
+This section shows how to install a local app that leverages the Cortex Agents API that will be able to interact with both structured (your Snowflake tables) and un-structured data (the content of the meeting notes).
+
+You can create a local conda env. In your terminal run:
+
+```code
+conda create -n wealth_360 python=3.11
+conda activate wealth_360
+
+pip install streamlit
+
+```
+
+Copy streamlit_local_app.py to your folder and edit it to add your own parameters:
+
+```python
+PRIVATE_KEY_PATH = "/path/to/your/rsa_key.p8"
+
+
+SNOWFLAKE_ACCOUNT = "YOUR_SNOWFLAKE_ACCOUNT_IDENTIFIER" # e.g., xy12345.us-west-2
+SNOWFLAKE_USER = "YOUR_SNOWFLAKE_USER"
+
+# --- Other Snowflake Config (Optional but Recommended) ---
+SNOWFLAKE_WAREHOUSE = "YOUR_WAREHOUSE"
+SNOWFLAKE_DATABASE = "YOUR_DATABASE"
+SNOWFLAKE_SCHEMA = "YOUR_SCHEMA"
+SNOWFLAKE_ROLE = "YOUR_ROLE" # Optional: Specify role if needed
+
+# Define Tool Resources, ensure paths/names are valid in your Snowflake account)
+# !!! IMPORTANT: Replace placeholder values below !!!
+AGENT_TOOL_RESOURCES = {
+    "analyst1": { "semantic_model_file": "!! IMPORTANT: Replace placeholder this value !!!" },
+    "search1": { "name": "!! IMPORTANT: Replace placeholder this value !!!", "max_results": 10 },
+}
+```
+
+
+
