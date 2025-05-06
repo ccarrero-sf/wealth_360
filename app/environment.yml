@@ -1,0 +1,9 @@
+# Streamlit in Snowflake
+name: streamlit-app
+channels:
+  - snowflake
+dependencies:
+  - streamlit
+  - snowflake-snowpark-python
+  - snowflake.core
+  - snowflake-ml-python
