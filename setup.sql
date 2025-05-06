@@ -1,4 +1,3 @@
-
 use schema FSI_DEMOS.WEALTH;
 
 create or replace TABLE FSI_DEMOS.WEALTH.CUSTOMERS (
@@ -65,36 +64,85 @@ create or replace TABLE FSI_DEMOS.WEALTH.SUPPORT_CASES (
 
 -- LOAD DATA, NOTE THAT THE FILES HAVE HEADER FOR FIRST ROW AND THE COLUMNS HAVE ;  AS THE SEPERATOR
 
+---- Staging area for the CSV files
+
+create or replace stage CSV ENCRYPTION = (TYPE = 'SNOWFLAKE_SSE') DIRECTORY = ( ENABLE = true );
+
+-- Copy the docs for bikes
+COPY FILES
+    INTO @CSV/
+    FROM @FSI_DEMOS.WEALTH.git_repo/branches/main/data/;
+
+ALTER STAGE CSV REFRESH;
+
+ls @CSV;
+
+copy into customers
+    from @CSV
+    FILES = ('CUSTOMERS.csv')
+    FILE_FORMAT = (TYPE = 'CSV', FIELD_DELIMITER = ';', SKIP_HEADER = 1);
+
+
+copy into PORTFOLIO_DATA
+    from @CSV
+    FILES = ('PORTFOLIO_DATA.csv')
+    FILE_FORMAT = (TYPE = 'CSV', FIELD_DELIMITER = ';', SKIP_HEADER = 1);
+
+
+copy into RELATIONSHIP_HISTORY
+    from @CSV
+    FILES = ('RELATIONSHIP_HISTORY.csv')
+    FILE_FORMAT = (TYPE = 'CSV', FIELD_DELIMITER = ';', SKIP_HEADER = 1);
+
+
+copy into SUPPORT_CASES
+    from @CSV
+    FILES = ('SUPPORT_CASES.csv')
+    FILE_FORMAT = (TYPE = 'CSV', FIELD_DELIMITER = ';', SKIP_HEADER = 1)
+    ON_ERROR = CONTINUE;
+
+--- Cortex Search Service for the Chatbot for meeting notes
+
 CREATE OR REPLACE WAREHOUSE CORTEX_WEALTH_SEARCH_WH
  WAREHOUSE_SIZE = SMALL;
 
-CREATE CORTEX SEARCH SERVICE  FSI_DEMOS.WEALTH.WEALTH_MEETING_SEARCH
+CREATE CORTEX SEARCH SERVICE  WEALTH_MEETING_SEARCH
 ON PAST_MEETING_NOTES
 ATTRIBUTES CID, INTERACTION_TYPE
 WAREHOUSE = CORTEX_WEALTH_SEARCH_WH
-TARGET_LAG = '1 minutes'
+TARGET_LAG = '1 hour'
 AS
 (SELECT
 		CID, INTERACTION_DATE, INTERACTION_TYPE, PAST_MEETING_NOTES
-	FROM FSI_DEMOS.WEALTH.RELATIONSHIP_HISTORY
+	FROM RELATIONSHIP_HISTORY
 );
--- This service is currently not used
-/*
-CREATE OR REPLACE CORTEX SEARCH SERVICE  FSI_DEMOS.WEALTH.WEALTH_SUPPORT_SEARCH
-ON TRANSCRIPT
-ATTRIBUTES CASE_ID, CATEGORY
-WAREHOUSE = CORTEX_WEALTH_SEARCH_WH
-TARGET_LAG = '1 minutes'
-AS
-(
-    select CASE_ID, CATEGORY, CASE_ID || ': ' || TRANSCRIPT AS TRANSCRIPT from  FSI_DEMOS.WEALTH.SUPPORT_CASES
-);
-*/
 
--- Current version of the Demo is not using Cortex Analys so this is optional
-CREATE OR REPLACE STAGE FSI_DEMOS.WEALTH.YAML_STAGE;
--- UPLOAD wealth_semantic_layer.yaml to YAML_STAGE
+--- Copy Semantic File to be used by Cortex Analyst:
 
--- Create a new Streamlit application and paste the content of streamlit_app.py, add snowflake-snowpark-python and snowflake.core
+CREATE OR REPLACE STAGE YAML_STAGE ENCRYPTION = (TYPE = 'SNOWFLAKE_SSE') DIRECTORY = ( ENABLE = true );
 
--- Questions for the Chat part are in the README
+COPY FILES
+    INTO @YAML_STAGE/
+    FROM @FSI_DEMOS.WEALTH.git_repo/branches/main/
+    FILES = ('wealth_semantic_layer.yaml');
+
+--- Install Streamlit App:
+
+CREATE OR REPLACE STAGE STREAMLIT_APP
+      DIRECTORY = (ENABLE = TRUE)
+      ENCRYPTION = ( TYPE = 'SNOWFLAKE_FULL' );
+
+
+COPY FILES
+    INTO @STREAMLIT_APP/
+    FROM @FSI_DEMOS.WEALTH.git_repo/branches/main/app;
+
+
+alter stage STREAMLIT_APP refresh;
+    
+CREATE OR REPLACE STREAMLIT WEALTH_360_APP
+        ROOT_LOCATION = '@FSI_DEMOS.WEALTH.STREAMLIT_APP'
+        MAIN_FILE = '/streamlit_app.py'
+        QUERY_WAREHOUSE = 'COMPUTE_WH'
+        TITLE = 'Wealth 360 App'
+        COMMENT = 'Demo for Wealth 360';
