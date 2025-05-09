@@ -54,7 +54,10 @@ conda create -n wealth_360 python=3.11
 conda activate wealth_360
 
 pip install streamlit
-
+pip install snowflake-snowpark-python
+pip install snowflake.core
+pip install snowflake-ml-python
+pip install sseclient
 ```
 
 Copy streamlit_local_app.py to your folder and edit it to add your own parameters:

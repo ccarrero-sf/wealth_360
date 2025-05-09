@@ -368,25 +368,25 @@ tables:
           - '0.33'
           - '0.02'
           - '2.76'
-      - name: 1Y_Return
+      - name: Return_1Y
         description: One-Year Return
-        expr: 1Y_Return
+        expr: Return_1Y
         data_type: NUMBER
         sample_values:
           - '0.33'
           - '0.92'
           - '15.73'
-      - name: 3Y_Return
+      - name: Return_3Y
         description: Historical 3-Year Return of the Portfolio
-        expr: 3Y_Return
+        expr: Return_3Y
         data_type: NUMBER
         sample_values:
           - '0.61'
           - '1.91'
           - '22.91'
-      - name: 5Y_Return
+      - name: Return_5Y
         description: Historical 5-year return on investment for a portfolio.
-        expr: 5Y_Return
+        expr: Return_5Y
         data_type: NUMBER
         sample_values:
           - '2.28'
